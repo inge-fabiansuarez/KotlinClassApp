@@ -1,4 +1,4 @@
-package com.fabiansuarez.storeappclase2024
+package com.fabiansuarez.kotlinclassapp
 
 class Client(cart: ArrayList<Product>, name: String, password: String) : User(name, password),
     Shopping {

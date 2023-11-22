@@ -1,4 +1,4 @@
-package com.fabiansuarez.storeappclase2024
+package com.fabiansuarez.kotlinclassapp
 
 //val solo se crea el getter y NO el setter
 //var crea Getter y Setter

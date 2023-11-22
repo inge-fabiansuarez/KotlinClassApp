@@ -1,4 +1,4 @@
-package com.fabiansuarez.storeappclase2024
+package com.fabiansuarez.kotlinclassapp
 
 interface Shopping {
 
