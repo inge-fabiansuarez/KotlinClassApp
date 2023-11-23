@@ -2,6 +2,7 @@ package com.fabiansuarez.kotlinclassapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -29,6 +30,10 @@ class ProductListActivity : AppCompatActivity() {
         viewModel.refreshData()
 
         binding.btAddProductListProduct.text = "$message $email"
+
+        viewModel.adapter.onItemClickListener = {
+            Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

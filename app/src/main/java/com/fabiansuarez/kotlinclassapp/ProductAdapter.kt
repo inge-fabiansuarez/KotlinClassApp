@@ -1,16 +1,16 @@
 package com.fabiansuarez.kotlinclassapp
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fabiansuarez.kotlinclassapp.databinding.ProductItemBinding
 
 
 class ProductAdapter(private var products: ArrayList<Product>) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    var onItemClickListener: ((Product) -> Unit)? = null
 
     fun refresh(myProducts: ArrayList<Product>) {
         products = myProducts
@@ -19,8 +19,13 @@ class ProductAdapter(private var products: ArrayList<Product>) :
 
     class ProductViewHolder(val binding: ProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(myProduct: Product) {
+        fun bind(myProduct: Product, onItemClickListener: ((Product) -> Unit)?) {
             binding.product = myProduct
+            binding.root.setOnClickListener {
+                onItemClickListener?.let {
+                    it(myProduct)
+                }
+            }
         }
     }
 
@@ -36,7 +41,7 @@ class ProductAdapter(private var products: ArrayList<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(products.get(position))
+        holder.bind(products.get(position), onItemClickListener)
     }
 
     override fun getItemCount(): Int = products.size
