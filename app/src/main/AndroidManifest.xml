@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--        esto es para que permita cargar imagenes en http en la etiqueta application-->
-    <!--        android:usesCleartextTraffic="true"-->
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,18 +15,17 @@
         android:theme="@style/Theme.KotlinClassApp"
         tools:targetApi="31">
         <activity
+            android:name=".view.ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.UserListActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.SignUpActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.ProductListActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true">

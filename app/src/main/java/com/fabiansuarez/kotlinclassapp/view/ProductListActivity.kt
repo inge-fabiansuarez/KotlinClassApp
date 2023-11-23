@@ -1,5 +1,6 @@
 package com.fabiansuarez.kotlinclassapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,9 @@ class ProductListActivity : AppCompatActivity() {
 
         viewModel.adapter.onItemClickListener = {
             Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT).show()
+            val intent = Intent(applicationContext, ProductDetailActivity::class.java)
+            intent.putExtra("product", it)
+            startActivity(intent)
         }
 
     }

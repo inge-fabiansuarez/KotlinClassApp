@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view_model"
+            type="com.fabiansuarez.kotlinclassapp.viewmodel.ProductDetailActivityViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp"
+        tools:context=".view.ProductDetailActivity">
+
+        <ImageView
+            android:id="@+id/iv_product_detail"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:image="@{view_model.product.urlProduct}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{view_model.product.name}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_product_detail" />
+
+        <TextView
+            android:id="@+id/tv_price_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(view_model.product.price)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_detail" />
+
+        <Button
+            android:id="@+id/bt_editar_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Editar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_detail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

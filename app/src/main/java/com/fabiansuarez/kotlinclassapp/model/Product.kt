@@ -1,5 +1,7 @@
 package com.fabiansuarez.kotlinclassapp.model
 
+import java.io.Serializable
+
 //val solo se crea el getter y NO el setter
 //var crea Getter y Setter
 
@@ -9,7 +11,7 @@ data class Product(
     var description: String = "",
     val status: ProductStatus = ProductStatus.AVAILABLE,
     val urlProduct: String = "https://todotintasysuministros.com/assets/media/hg-1251.jpg"
-) {
+) : Serializable {
 
     //este metodo me permite establecer que ejecutar cuando se instancia el objeto
     init {
