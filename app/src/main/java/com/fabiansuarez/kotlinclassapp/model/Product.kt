@@ -8,7 +8,7 @@ data class Product(
     var price: Double,
     var description: String = "",
     val status: ProductStatus = ProductStatus.AVAILABLE,
-    val imgProduct: String = "https://todotintasysuministros.com/assets/media/hg-1251.jpg"
+    val urlProduct: String = "https://todotintasysuministros.com/assets/media/hg-1251.jpg"
 ) {
 
     //este metodo me permite establecer que ejecutar cuando se instancia el objeto
