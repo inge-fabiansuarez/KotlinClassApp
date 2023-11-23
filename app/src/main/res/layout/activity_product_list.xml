@@ -33,6 +33,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:adapter="@{view_model.adapter}"
             app:layout_constraintTop_toBottomOf="@id/bt_add_product_list_product" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
