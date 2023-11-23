@@ -1,5 +1,6 @@
 package com.fabiansuarez.kotlinclassapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
         binding.tvTitle.text = "ESTE ES MI TITULO PERSONALIZADO"
+        viewModel.user.email = "fabian@correo.com"
+        viewModel.password = "123"
 
         binding.btLogIn.setOnClickListener {
             if (viewModel.login()) {
@@ -30,10 +33,20 @@ class MainActivity : AppCompatActivity() {
                     "Iniciando sesion... ${viewModel.user?.name}",
                     Toast.LENGTH_SHORT
                 ).show()
+                val intent = Intent(applicationContext, ProductListActivity::class.java)
+                intent.apply {
+                    putExtra("message", "Hola")
+                    putExtra("data", viewModel.user.email)
+                }
+                startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, "Datos inválidos", Toast.LENGTH_SHORT).show()
-
             }
+        }
+
+        binding.btRegister.setOnClickListener {
+            startActivity(Intent(applicationContext, SignUpActivity::class.java))
         }
 
     }

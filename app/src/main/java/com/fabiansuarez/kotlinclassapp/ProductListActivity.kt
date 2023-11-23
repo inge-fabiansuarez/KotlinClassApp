@@ -15,12 +15,20 @@ class ProductListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_product_list)
+
+        var message: String? = intent?.getStringExtra("message")
+        var email: String? = intent?.getStringExtra("data")
+
+
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
         viewModel = ViewModelProvider(this)[ProductListActivityViewModel::class.java]
         binding.viewModel = viewModel
 
         viewModel.loadProducts()
         viewModel.refreshData()
+
+        binding.btAddProductListProduct.text = "$message $email"
 
     }
 }
