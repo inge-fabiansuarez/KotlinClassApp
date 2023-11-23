@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="user"
-            type="com.fabiansuarez.kotlinclassapp.User" />
+            name="view_model"
+            type="com.fabiansuarez.kotlinclassapp.MainActivityViewModel" />
 
     </data>
 
@@ -40,7 +41,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={user.name}"
+                android:text="@={view_model.user.name}"
                 android:hint="Correo" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,7 +58,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={user.password}"
+                android:text="@={view_model.user.password}"
                 android:hint="Contraseña" />
         </com.google.android.material.textfield.TextInputLayout>
 
