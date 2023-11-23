@@ -1,18 +1,7 @@
 package com.fabiansuarez.kotlinclassapp
 
-class Client(cart: ArrayList<Product>? = null, name: String, password: String) :
-    User(name, password),
-    Shopping {
-    override fun login(): Boolean {
-        return super.login()
+class Client(cart: ArrayList<Product>? = null, name: String, password: String) : Shopping {
 
-    }
-
-    /*
-        override fun showInfo() {
-            TODO("Not yet implemented")
-        }
-    */
 
     override fun buy() {
         TODO("Not yet implemented")

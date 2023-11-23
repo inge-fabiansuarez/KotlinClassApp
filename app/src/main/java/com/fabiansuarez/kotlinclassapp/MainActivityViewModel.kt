@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
 
-    val user: User = User("", "")
+    val user: User = User("", "","","")
 
-    fun login(): Boolean =
-        user.name == "Fabian" && user.password == "123"
+    fun login(): Boolean = true
+        //user.name == "Fabian" && user.password == "123"
 }
