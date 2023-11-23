@@ -24,7 +24,6 @@ class ProductAdapter(private var products: ArrayList<Product>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(myProduct: Product, onItemClickListener: ((Product) -> Unit)?) {
             binding.product = myProduct
-            Glide.with(binding.root.context).load(myProduct.urlProduct).into(binding.ivProductItem)
             binding.root.setOnClickListener {
                 onItemClickListener?.let {
                     it(myProduct)
