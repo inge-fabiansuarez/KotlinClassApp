@@ -1,6 +1,8 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.fabiansuarez.kotlinclassapp.model.User
+import com.fabiansuarez.kotlinclassapp.view.adapter.UserAdapter
 
 class UserListActivityViewModel : ViewModel() {
 

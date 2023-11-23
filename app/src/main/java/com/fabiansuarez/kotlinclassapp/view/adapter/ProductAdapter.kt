@@ -1,10 +1,12 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.ProductItemBinding
+import com.fabiansuarez.kotlinclassapp.model.Product
 
 
 class ProductAdapter(private var products: ArrayList<Product>) :

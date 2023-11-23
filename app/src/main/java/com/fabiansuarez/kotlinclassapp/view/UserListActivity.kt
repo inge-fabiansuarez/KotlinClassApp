@@ -1,9 +1,11 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.fabiansuarez.kotlinclassapp.R
+import com.fabiansuarez.kotlinclassapp.viewmodel.UserListActivityViewModel
 import com.fabiansuarez.kotlinclassapp.databinding.ActivityUserListBinding
 
 class UserListActivity : AppCompatActivity() {

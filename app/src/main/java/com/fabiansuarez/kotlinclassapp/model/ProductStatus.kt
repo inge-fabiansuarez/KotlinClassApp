@@ -1,4 +1,4 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.model
 
 /*enum class ProductStatus {
     AVAILABLE, SENT, SOLD

@@ -7,7 +7,7 @@
 
         <variable
             name="view_model"
-            type="com.fabiansuarez.kotlinclassapp.ProductListActivityViewModel" />
+            type="com.fabiansuarez.kotlinclassapp.viewmodel.ProductListActivityViewModel" />
 
     </data>
 
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="12dp"
-        tools:context=".ProductListActivity">
+        tools:context=".view.ProductListActivity">
 
         <Button
             android:id="@+id/bt_add_product_list_product"

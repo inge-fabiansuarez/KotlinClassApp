@@ -1,4 +1,4 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.model
 
 class Client(cart: ArrayList<Product>? = null, name: String, password: String) : Shopping {
 

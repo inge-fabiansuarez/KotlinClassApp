@@ -1,12 +1,13 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.fabiansuarez.kotlinclassapp.viewmodel.MainActivityViewModel
+import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

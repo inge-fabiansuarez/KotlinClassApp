@@ -1,10 +1,12 @@
-package com.fabiansuarez.kotlinclassapp
+package com.fabiansuarez.kotlinclassapp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.UserItemBinding
+import com.fabiansuarez.kotlinclassapp.model.User
 
 class UserAdapter(private var dataSet: ArrayList<User>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {
@@ -21,7 +23,7 @@ class UserAdapter(private var dataSet: ArrayList<User>) :
             parent,
             false
         )
-        return UserAdapter.ViewHolder(binding)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int = dataSet.size

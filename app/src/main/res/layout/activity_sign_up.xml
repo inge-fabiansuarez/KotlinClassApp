@@ -7,7 +7,7 @@
 
         <variable
             name="view_model"
-            type="com.fabiansuarez.kotlinclassapp.SignUpActivityViewModel" />
+            type="com.fabiansuarez.kotlinclassapp.viewmodel.SignUpActivityViewModel" />
     </data>
 
     <ScrollView
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            tools:context=".SignUpActivity">
+            tools:context=".view.SignUpActivity">
 
             <ImageView
                 android:id="@+id/iv_user_register"
