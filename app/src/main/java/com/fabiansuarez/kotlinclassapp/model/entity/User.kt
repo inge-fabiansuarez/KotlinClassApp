@@ -1,6 +1,4 @@
-package com.fabiansuarez.kotlinclassapp.model
-
-import android.provider.ContactsContract.CommonDataKinds.Email
+package com.fabiansuarez.kotlinclassapp.model.entity
 
 //open permite que pueda heredar esta clase
 //abstract no permite instaciar o crear objetos de esta clase.

@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.UserItemBinding
-import com.fabiansuarez.kotlinclassapp.model.User
+import com.fabiansuarez.kotlinclassapp.model.entity.User
 
 class UserAdapter(private var dataSet: ArrayList<User>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {

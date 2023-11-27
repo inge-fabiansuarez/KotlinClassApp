@@ -1,4 +1,6 @@
-package com.fabiansuarez.kotlinclassapp.model
+package com.fabiansuarez.kotlinclassapp.model.entity
+
+import com.fabiansuarez.kotlinclassapp.model.Shopping
 
 class Client(cart: ArrayList<Product>? = null, name: String, password: String) : Shopping {
 

@@ -6,7 +6,7 @@
 
         <variable
             name="product"
-            type="com.fabiansuarez.kotlinclassapp.model.Product" />
+            type="com.fabiansuarez.kotlinclassapp.model.entity.Product" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

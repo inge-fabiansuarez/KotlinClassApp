@@ -1,22 +1,21 @@
 package com.fabiansuarez.kotlinclassapp.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import com.fabiansuarez.kotlinclassapp.model.Product
+import com.fabiansuarez.kotlinclassapp.model.entity.Product
+import com.fabiansuarez.kotlinclassapp.model.repository.ProductRepository
 import com.fabiansuarez.kotlinclassapp.view.adapter.ProductAdapter
 
-class ProductListActivityViewModel : ViewModel() {
+class ProductListActivityViewModel(application: Application) : AndroidViewModel(application) {
 
-    val products: ArrayList<Product> = arrayListOf()
+    var products: ArrayList<Product> = arrayListOf()
     var adapter: ProductAdapter = ProductAdapter(products)
 
+    private val productRepository: ProductRepository = ProductRepository(application)
+
     fun loadProducts() {
-        products.apply {
-            clear()
-            add(Product(name = "Computador", price = 50000.0))
-            add(Product(name = "Teclado", price = 20000.0))
-            add(Product(name = "Disco Duro", price = 30000.0))
-            add(Product(name = "Monitor", price = 50000.0))
-        }
+        products = productRepository.getAllLocal()
     }
 
     fun refreshData() {

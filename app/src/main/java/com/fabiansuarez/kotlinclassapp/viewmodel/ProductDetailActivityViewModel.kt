@@ -1,10 +1,10 @@
 package com.fabiansuarez.kotlinclassapp.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.fabiansuarez.kotlinclassapp.model.Product
+import com.fabiansuarez.kotlinclassapp.model.entity.Product
 
 class ProductDetailActivityViewModel : ViewModel() {
 
-    var product: Product = Product("", 0.0, "")
+    var product: Product = Product(name = "", price = 0.0, description = "")
 
 }

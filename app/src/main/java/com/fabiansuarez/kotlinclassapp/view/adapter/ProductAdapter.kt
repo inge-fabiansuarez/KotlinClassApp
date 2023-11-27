@@ -4,10 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.ProductItemBinding
-import com.fabiansuarez.kotlinclassapp.model.Product
+import com.fabiansuarez.kotlinclassapp.model.entity.Product
 
 
 class ProductAdapter(private var products: ArrayList<Product>) :

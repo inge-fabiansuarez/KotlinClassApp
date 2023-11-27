@@ -3,14 +3,11 @@ package com.fabiansuarez.kotlinclassapp.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.ActivityProductDetailBinding
-import com.fabiansuarez.kotlinclassapp.databinding.ProductItemBinding
-import com.fabiansuarez.kotlinclassapp.model.Product
+import com.fabiansuarez.kotlinclassapp.model.entity.Product
 import com.fabiansuarez.kotlinclassapp.viewmodel.ProductDetailActivityViewModel
-import com.fabiansuarez.kotlinclassapp.viewmodel.ProductListActivityViewModel
 
 class ProductDetailActivity : AppCompatActivity() {
 
