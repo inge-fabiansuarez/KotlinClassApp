@@ -38,6 +38,10 @@ class ProductListActivity : AppCompatActivity() {
             intent.putExtra("product", it)
             startActivity(intent)
         }
+        viewModel.adapter.onItemLongClickListener = {
+            Toast.makeText(applicationContext, it.name + "Se elimino", Toast.LENGTH_SHORT).show()
+            viewModel.deleteProduct(it)
+        }
 
     }
 }

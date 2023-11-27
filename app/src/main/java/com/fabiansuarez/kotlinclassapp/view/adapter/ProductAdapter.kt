@@ -13,6 +13,7 @@ class ProductAdapter(private var products: ArrayList<Product>) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     var onItemClickListener: ((Product) -> Unit)? = null
+    var onItemLongClickListener: ((Product) -> Unit)? = null
 
     fun refresh(myProducts: ArrayList<Product>) {
         products = myProducts
@@ -21,12 +22,23 @@ class ProductAdapter(private var products: ArrayList<Product>) :
 
     class ProductViewHolder(val binding: ProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(myProduct: Product, onItemClickListener: ((Product) -> Unit)?) {
+        fun bind(
+            myProduct: Product,
+            onItemClickListener: ((Product) -> Unit)?,
+            onItemLongClickListener: ((Product) -> Unit)?
+        ) {
             binding.product = myProduct
             binding.root.setOnClickListener {
                 onItemClickListener?.let {
                     it(myProduct)
                 }
+            }
+
+            binding.root.setOnLongClickListener {
+                onItemLongClickListener?.let {
+                    it(myProduct)
+                }
+                true
             }
         }
     }
@@ -43,7 +55,7 @@ class ProductAdapter(private var products: ArrayList<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(products.get(position), onItemClickListener)
+        holder.bind(products.get(position), onItemClickListener, onItemLongClickListener)
     }
 
     override fun getItemCount(): Int = products.size

@@ -19,6 +19,12 @@ class ProductListActivityViewModel(application: Application) : AndroidViewModel(
     }
 
     fun refreshData() {
+        loadProducts()
         adapter.refresh(products)
+    }
+
+    fun deleteProduct(myProduct: Product) {
+        productRepository.deleteLocal(myProduct)
+        refreshData()
     }
 }
