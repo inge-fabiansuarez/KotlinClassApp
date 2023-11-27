@@ -10,21 +10,19 @@ import com.fabiansuarez.kotlinclassapp.view.adapter.ProductAdapter
 class ProductListActivityViewModel(application: Application) : AndroidViewModel(application) {
 
     var products: ArrayList<Product> = arrayListOf()
-    var adapter: ProductAdapter = ProductAdapter(products)
 
     private val productRepository: ProductRepository = ProductRepository(application)
+
+    init {
+        loadProducts()
+    }
 
     fun loadProducts() {
         products = productRepository.getAllLocal()
     }
 
-    fun refreshData() {
-        loadProducts()
-        adapter.refresh(products)
-    }
-
     fun deleteProduct(myProduct: Product) {
         productRepository.deleteLocal(myProduct)
-        refreshData()
+        loadProducts()
     }
 }

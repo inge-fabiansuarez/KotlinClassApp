@@ -9,11 +9,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.fabiansuarez.kotlinclassapp.viewmodel.ProductListActivityViewModel
 import com.fabiansuarez.kotlinclassapp.R
 import com.fabiansuarez.kotlinclassapp.databinding.ActivityProductListBinding
+import com.fabiansuarez.kotlinclassapp.view.adapter.ProductAdapter
 
 class ProductListActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityProductListBinding
     lateinit var viewModel: ProductListActivityViewModel
+    lateinit var adapter: ProductAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_product_list)
@@ -25,22 +29,24 @@ class ProductListActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
         viewModel = ViewModelProvider(this)[ProductListActivityViewModel::class.java]
-        binding.viewModel = viewModel
 
-        viewModel.loadProducts()
-        viewModel.refreshData()
+        adapter = ProductAdapter(viewModel.products)
+
+        binding.adapter = adapter
+
 
         binding.btAddProductListProduct.text = "$message $email"
 
-        viewModel.adapter.onItemClickListener = {
+        adapter.onItemClickListener = {
             Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT).show()
             val intent = Intent(applicationContext, ProductDetailActivity::class.java)
             intent.putExtra("product", it)
             startActivity(intent)
         }
-        viewModel.adapter.onItemLongClickListener = {
+        adapter.onItemLongClickListener = {
             Toast.makeText(applicationContext, it.name + "Se elimino", Toast.LENGTH_SHORT).show()
             viewModel.deleteProduct(it)
+            adapter.refresh(viewModel.products)
         }
 
     }
