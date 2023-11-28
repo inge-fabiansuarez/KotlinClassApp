@@ -14,21 +14,30 @@ class ProductDetailActivity : AppCompatActivity() {
 
     lateinit var viewModel: ProductDetailActivityViewModel
     lateinit var binding: ActivityProductDetailBinding
+    var myProductKey: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val myProduct: Product = intent.getSerializableExtra("product") as Product
+        myProductKey = intent.getIntExtra("product_key", 0)
         //setContentView(R.layout.activity_product_detail)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_detail)
         viewModel = ViewModelProvider(this).get(ProductDetailActivityViewModel::class.java)
-        viewModel.product = myProduct
+
+        viewModel.getProductByKey(myProductKey)
+
         binding.viewModel = viewModel
 
         binding.btEditarDetail.setOnClickListener {
             var intent: Intent = Intent(applicationContext, ProductFormActivity::class.java)
-            intent.putExtra("product", myProduct)
+            intent.putExtra("product", viewModel.product)
             startActivity(intent)
         }
 
+    }
+
+    override fun onResume() {
+        viewModel.getProductByKey(myProductKey)
+        binding.viewModel = viewModel
+        super.onResume()
     }
 }

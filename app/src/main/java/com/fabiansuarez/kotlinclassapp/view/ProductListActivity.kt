@@ -39,7 +39,7 @@ class ProductListActivity : AppCompatActivity() {
         adapter.onItemClickListener = {
             Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT).show()
             val intent = Intent(applicationContext, ProductDetailActivity::class.java)
-            intent.putExtra("product", it)
+            intent.putExtra("product_key", it.key)
             startActivity(intent)
         }
         adapter.onItemLongClickListener = {
