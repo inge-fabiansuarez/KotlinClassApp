@@ -31,6 +31,7 @@ class ProductRepository(myContext: Context) {
             add(Product(name = "Disco Duro", price = 30000.0))
             add(Product(name = "Monitor", price = 50000.0))
         }
+        loadAllLocal()
     }
 
     fun getByKeyLocal(key: Int): Product {

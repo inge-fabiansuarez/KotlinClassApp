@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view_model"
+            type="com.fabiansuarez.kotlinclassapp.viewmodel.ProductFormActivityViewModel" />
+        <import type="com.fabiansuarez.kotlinclassapp.utils.BindingUtilKt"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        tools:context=".view.ProductFormActivity">
+
+
+        <ImageView
+            android:id="@+id/iv_product_form_product"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_form_name_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_product_form_product">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_document_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del producto"
+                android:text="@={view_model.product.name}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_price_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_form_name_product">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_price_product_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Precio"
+                android:text="@={BindingUtilKt.doubleToString(view_model.product.price)}"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_url_image_product_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_price_product">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_url_product_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Url Imagen"
+                android:text="@={view_model.product.urlProduct}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_description_product_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_url_image_product_form">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description_product_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripcion Producto"
+                android:text="@={view_model.product.description}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/bt_save_product_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Agregar Nuevo Producto"
+            app:layout_constraintTop_toBottomOf="@id/til_description_product_form" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

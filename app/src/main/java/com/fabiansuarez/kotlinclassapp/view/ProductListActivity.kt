@@ -34,7 +34,6 @@ class ProductListActivity : AppCompatActivity() {
 
         binding.adapter = adapter
 
-
         binding.btAddProductListProduct.text = "$message $email"
 
         adapter.onItemClickListener = {
@@ -49,5 +48,15 @@ class ProductListActivity : AppCompatActivity() {
             adapter.refresh(viewModel.products)
         }
 
+        binding.btAddProductListProduct.setOnClickListener {
+            startActivity(Intent(applicationContext, ProductFormActivity::class.java))
+        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadProducts()
+        adapter.refresh(viewModel.products)
     }
 }

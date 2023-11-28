@@ -17,7 +17,7 @@ data class Product(
     var description: String = "",
     val status: ProductStatus = ProductStatus.AVAILABLE,
     @ColumnInfo(name = "url_image")
-    val urlProduct: String = "https://todotintasysuministros.com/assets/media/hg-1251.jpg"
+    var urlProduct: String = "https://todotintasysuministros.com/assets/media/hg-1251.jpg"
 ) : Serializable {
 
     //este metodo me permite establecer que ejecutar cuando se instancia el objeto
