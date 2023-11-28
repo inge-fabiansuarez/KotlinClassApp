@@ -40,18 +40,18 @@ class ProductRepository(myContext: Context) {
     }
 
     fun addLocal(myProduct: Product) {
-        loadAllLocal()
         productDAO.add(myProduct)
+        loadAllLocal()
     }
 
     fun updateLocal(myProduct: Product) {
-        loadAllLocal()
         productDAO.update(myProduct)
+        loadAllLocal()
     }
 
     fun deleteLocal(product: Product) {
-        loadAllLocal()
         productDAO.delete(product)
+        loadAllLocal()
     }
 
 }

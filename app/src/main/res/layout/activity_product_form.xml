@@ -8,7 +8,8 @@
         <variable
             name="view_model"
             type="com.fabiansuarez.kotlinclassapp.viewmodel.ProductFormActivityViewModel" />
-        <import type="com.fabiansuarez.kotlinclassapp.utils.BindingUtilKt"/>
+
+        <import type="com.fabiansuarez.kotlinclassapp.utils.BindingUtilKt" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,15 +18,27 @@
         android:padding="12dp"
         tools:context=".view.ProductFormActivity">
 
+        <TextView
+            android:id="@+id/tv_title_pruduct_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nuevo Producto"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_product_form_product"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title_pruduct_form" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_form_name_product"
@@ -60,8 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Precio"
-                android:text="@={BindingUtilKt.doubleToString(view_model.product.price)}"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:text="@={BindingUtilKt.doubleToString(view_model.product.price)}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

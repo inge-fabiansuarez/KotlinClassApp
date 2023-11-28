@@ -1,5 +1,6 @@
 package com.fabiansuarez.kotlinclassapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -22,6 +23,12 @@ class ProductDetailActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(ProductDetailActivityViewModel::class.java)
         viewModel.product = myProduct
         binding.viewModel = viewModel
+
+        binding.btEditarDetail.setOnClickListener {
+            var intent: Intent = Intent(applicationContext, ProductFormActivity::class.java)
+            intent.putExtra("product", myProduct)
+            startActivity(intent)
+        }
 
     }
 }

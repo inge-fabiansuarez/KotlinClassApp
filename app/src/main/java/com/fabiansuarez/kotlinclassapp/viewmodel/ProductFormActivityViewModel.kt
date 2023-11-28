@@ -14,4 +14,8 @@ class ProductFormActivityViewModel(application: Application) :
     fun add() {
         productRepository.addLocal(product)
     }
+
+    fun edit() {
+        productRepository.updateLocal(product)
+    }
 }
